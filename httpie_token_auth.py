@@ -22,7 +22,7 @@ class TokenAuth:
 
     def __call__(self, r):
 
-        r.headers['Authorization'] = '%s %s' % (self.token_type, self.access_token)
+        r.headers['Authorization'] = '%s %s' % (self.token_type, self.access_token.decode('ascii'))
 
         return r
 
